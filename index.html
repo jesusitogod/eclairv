@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Éclair Postrería - Postres Saludables y Deliciosos</title>
+    <meta name="description" content="Postres saludables, deliciosos e inclusivos. Descubre nuestra repostería artesanal y nuestra aplicación móvil.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        /* ==========================================
+           VARIABLES - PASTELES ELEGANTES
+           ========================================== */
+        :root {
+            --beige-crema: #F9F3E8;
+            --cafe-oscuro: #7A5A4A;
+            --caramelo: #D8A66E;
+            --verde-pastel: #D0E0BE;
+            --verde-salvia: #AEC79E;
+            --blanco-calido: #FFFEF8;
+            --sombra-suave: rgba(122, 90, 74, 0.10);
+
+            --fuente-titulos: 'Playfair Display', serif;
+            --fuente-cuerpo: 'Montserrat', sans-serif;
+            --fuente-cursiva: 'Great Vibes', cursive;
+        }
+
+        /* ==========================================
+           BASE
+           ========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--fuente-cuerpo);
+            background-color: var(--blanco-calido);
+            color: var(--cafe-oscuro);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        section {
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        /* ==========================================
+           TÍTULOS
+           ========================================== */
+        h1, h2, h3, h4 {
+            font-family: var(--fuente-titulos);
+            font-weight: 700;
+            color: var(--cafe-oscuro);
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        h2 span {
+            color: var(--caramelo);
+        }
+
+        .subtitulo {
+            font-family: var(--fuente-cursiva);
+            color: var(--caramelo);
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .cursiva {
+            font-family: var(--fuente-cursiva);
+            color: var(--caramelo);
+        }
+
+        /* ==========================================
+           NAVEGACIÓN
+           ========================================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 254, 248, 0.85);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(122, 90, 74, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: rgba(255, 254, 248, 0.98);
+            box-shadow: 0 8px 32px var(--sombra-suave);
+            padding: 12px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+
+        .logo img {
+            height: 56px;
+            width: auto;
+            filter: drop-shadow(0 4px 12px rgba(122, 90, 74, 0.1));
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 34px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-family: var(--fuente-titulos);
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--cafe-oscuro);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--caramelo);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--caramelo);
+            border-radius: 2px;
+            transition: width 0.35s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 26px;
+            height: 3px;
+            background: var(--cafe-oscuro);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* ==========================================
+           HERO - PORTADA SIMÉTRICA Y ELEGANTE
+           ========================================== */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(180deg, var(--beige-crema) 0%, var(--blanco-calido) 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 72px;
+            padding-bottom: 80px;
+        }
+
+        .hero-grid {
+            display: flex;
+            gap: 70px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 24px;
+        }
+
+        .hero-texto {
+            flex: 1 1 320px;
+            max-width: 560px;
+            text-align: left;
+        }
+
+        .hero-imagen {
+            flex: 0 0 560px;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .hero-texto .hero-buttons {
+            justify-content: flex-start;
+        }
+
+        .hero-galeria {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 16px;
+        }
+
+        .hero-galeria img {
+            width: 170px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px var(--sombra-suave);
+            border: 6px solid var(--blanco-calido);
+            filter: brightness(1.02) contrast(1.05);
+            transition: transform 0.4s ease;
+        }
+
+        .hero-galeria img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Simetría: elementos decorativos a ambos lados */
+        .hero-symmetry {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            display: flex;
+            justify-content: space-between;
+            padding: 80px 60px;
+        }
+
+        .sym-left, .sym-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .sym-element {
+            width: 140px;
+            height: 140px;
+            border-radius: 52% 48% 48% 52% / 50% 50% 50% 50%;
+            background: var(--verde-pastel);
+            filter: blur(45px);
+            opacity: 0.35;
+            animation: float-sym 7s ease-in-out infinite;
+        }
+
+        .sym-element.car {
+            background: var(--caramelo);
+            animation-delay: 2s;
+            width: 160px;
+            height: 160px;
+        }
+
+        .sym-element.sal {
+            background: var(--verde-salvia);
+            animation-delay: 4s;
+            width: 120px;
+            height: 120px;
+        }
+
+        @keyframes float-sym {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.35; }
+            50% { transform: translateY(-25px) scale(1.08); opacity: 0.5; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 850px;
+            padding: 0 24px;
+        }
+
+        .hero-logo {
+            margin-bottom: 50px;
+            display: inline-block;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-logo:hover {
+            transform: scale(1.03) rotate(1deg);
+        }
+
+        .hero-logo img {
+            max-width: 340px;
+            width: 100%;
+            height: auto;
+        }
+
+        .hero h1 {
+            font-size: 4.2rem;
+            line-height: 1.15;
+            margin-bottom: 26px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1::after {
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 7px;
+            background: var(--caramelo);
+            border-radius: 4px;
+            opacity: 0.5;
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            color: var(--cafe-oscuro);
+            margin-bottom: 48px;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 22px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 17px 40px;
+            border-radius: 60px;
+            font-family: var(--fuente-titulos);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--caramelo);
+            color: var(--blanco-calido);
+        }
+
+        .btn-primary:hover {
+            background: var(--cafe-oscuro);
+            color: var(--blanco-calido);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 45px rgba(216, 166, 110, 0.35);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--cafe-oscuro);
+            border: 2px solid var(--cafe-oscuro);
+        }
+
+        .btn-secondary:hover {
+            background: var(--cafe-oscuro);
+            color: var(--blanco-calido);
+            transform: translateY(-4px);
+        }
+
+        .hero-image-wrap {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-frame {
+            width: 560px;
+            height: 460px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 35px 90px var(--sombra-suave);
+            border: 8px solid var(--blanco-calido);
+            background: var(--verde-pastel);
+            position: relative;
+            transform: rotate(-0.5deg);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image-frame:hover {
+            transform: rotate(0.5deg) scale(1.02);
+        }
+
+        .hero-image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(1.02) contrast(1.05);
+        }
+
+        .hero-corners {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .corner {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--caramelo);
+        }
+
+        .corner.tl { top: 0; left: 0; border-right: none; border-bottom: none; }
+        .corner.tr { top: 0; right: 0; border-left: none; border-bottom: none; }
+        .corner.bl { bottom: 0; left: 0; border-right: none; border-top: none; }
+        .corner.br { bottom: 0; right: 0; border-left: none; border-top: none; }
+
+        /* ==========================================
+           SOBRE NOSOTROS - ESTRUCTURA LIMPIA
+           ========================================== */
+        .sobre-nosotros {
+            background: var(--blanco-calido);
+            padding: 130px 0;
+        }
+
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .sobre-imagen {
+            position: relative;
+        }
+
+        .sobre-imagen img {
+            width: 100%;
+            height: auto;
+            border-radius: 30px;
+            box-shadow: 0 25px 70px var(--sombra-suave);
+            transition: transform 0.6s ease;
+        }
+
+        .sobre-imagen:hover img {
+            transform: scale(1.02);
+        }
+
+        .sobre-badge {
+            position: absolute;
+            top: -40px;
+            left: 60px;
+            background: var(--caramelo);
+            color: var(--blanco-calido);
+            padding: 16px 30px;
+            border-radius: 50px;
+            font-family: var(--fuente-titulos);
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 10px 30px rgba(216, 166, 110, 0.3);
+            z-index: 2;
+        }
+
+        .sobre-contenido h3 {
+            font-size: 2.6rem;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .sobre-contenido p {
+            font-size: 1.1rem;
+            color: var(--cafe-oscuro);
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+
+        .sobre-contenido p.destacada {
+            font-family: var(--fuente-cursiva);
+            color: var(--caramelo);
+            font-size: 1.5rem;
+            margin-top: 32px;
+            font-style: italic;
+            border-left: 4px solid var(--caramelo);
+            padding-left: 24px;
+        }
+
+        /* ==========================================
+           MISIÓN Y VISIÓN - TARJETAS CENTRADAS
+           ========================================== */
+        .mision-vision {
+            background: var(--beige-crema);
+            padding: 130px 0;
+        }
+
+        .mision-vision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .tarjeta-centrada {
+            background: var(--blanco-calido);
+            padding: 60px 45px;
+            border-radius: 32px;
+            box-shadow: 0 20px 60px var(--sombra-suave);
+            border: 1px solid rgba(122, 90, 74, 0.05);
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .tarjeta-centrada:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 80px rgba(122, 90, 74, 0.12);
+        }
+
+        .tarjeta-centrada h3 {
+            font-size: 1.9rem;
+            margin-bottom: 22px;
+            color: var(--caramelo);
+        }
+
+        .tarjeta-centrada p {
+            font-size: 1.05rem;
+            color: var(--cafe-oscuro);
+            line-height: 1.8;
+        }
+
+        .tarjeta-imagen {
+            position: relative;
+            height: 100%;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px var(--sombra-suave);
+        }
+
+        .tarjeta-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .tarjeta-imagen:hover img {
+            transform: scale(1.04);
+        }
+
+        /* ==========================================
+           VALORES - GRID ELEGANTE
+           ========================================== */
+        .valores {
+            background: var(--blanco-calido);
+            padding: 130px 0;
+        }
+
+        .valores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 30px;
+        }
+
+        .valor-card {
+            background: var(--blanco-calido);
+            padding: 45px 30px;
+            border-radius: 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(122, 90, 74, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .valor-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--caramelo), var(--verde-pastel));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+            transform-origin: left;
+        }
+
+        .valor-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--caramelo);
+            box-shadow: 0 20px 50px rgba(122, 90, 74, 0.1);
+        }
+
+        .valor-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .valor-icono {
+            width: 72px;
+            height: 72px;
+            background: var(--verde-pastel);
+            border-radius: 50%;
+            margin: 0 auto 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.9rem;
+            color: var(--cafe-oscuro);
+            transition: all 0.4s ease;
+        }
+
+        .valor-card:hover .valor-icono {
+            transform: rotate(5deg) scale(1.1);
+            background: var(--caramelo);
+        }
+
+        .valor-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+        }
+
+        .valor-card p {
+            font-size: 0.95rem;
+            color: var(--cafe-oscuro);
+            line-height: 1.7;
+        }
+
+        /* ==========================================
+           APLICACIÓN MÓVIL
+           ========================================== */
+        .aplicacion {
+            background: var(--blanco-calido);
+            padding: 130px 0;
+        }
+
+        .aplicacion-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .aplicacion-contenido h3 {
+            font-size: 2.6rem;
+            margin-bottom: 26px;
+        }
+
+        .aplicacion-contenido p {
+            font-size: 1.1rem;
+            color: var(--cafe-oscuro);
+            margin-bottom: 38px;
+            line-height: 1.8;
+        }
+
+        .mockup {
+            position: relative;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .telefono {
+            width: 320px;
+            height: 600px;
+            background: var(--cafe-oscuro);
+            border-radius: 52px;
+            padding: 32px;
+            box-shadow: 0 35px 100px rgba(122, 90, 74, 0.3);
+            position: relative;
+            transform: rotate(-2deg);
+        }
+
+        .telefono::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 26px;
+            background: var(--cafe-oscuro);
+            border-top-left-radius: 26px;
+            border-top-right-radius: 26px;
+        }
+
+        .pantalla-app {
+            width: 100%;
+            height: 100%;
+            background: var(--beige-crema);
+            border-radius: 38px;
+            overflow: hidden;
+            position: relative;
+            border: 6px solid var(--caramelo);
+        }
+
+        .pantalla-app img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .app-glow {
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 240px;
+            height: 240px;
+            background: var(--verde-pastel);
+            border-radius: 50%;
+            filter: blur(50px);
+            opacity: 0.4;
+            z-index: -1;
+        }
+
+        /* ==========================================
+           ESLOGAN
+           ========================================== */
+        .eslogan {
+            background: var(--beige-crema);
+            text-align: center;
+            padding: 150px 0;
+        }
+
+        .eslogan-contenido {
+            max-width: 880px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .eslogan-texto {
+            font-family: var(--fuente-cursiva);
+            font-size: 5rem;
+            color: var(--caramelo);
+            margin-bottom: 55px;
+            line-height: 1.1;
+            text-shadow: 0 4px 14px rgba(216, 166, 110, 0.2);
+        }
+
+        .eslogan-divider {
+            width: 100px;
+            height: 4px;
+            background: var(--verde-pastel);
+            margin: 0 auto 50px;
+            border-radius: 4px;
+        }
+
+        .eslogan-imagen {
+            border-radius: 42px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px var(--sombra-suave);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 6px solid var(--blanco-calido);
+            transition: transform 0.5s ease;
+        }
+
+        .eslogan-imagen:hover {
+            transform: scale(1.02);
+        }
+
+        .eslogan-imagen img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ==========================================
+           CONTACTO
+           ========================================== */
+        .contacto {
+            background: var(--blanco-calido);
+            padding: 130px 0;
+        }
+
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 50px;
+        }
+
+        .contacto-info h3 {
+            font-size: 2.6rem;
+            margin-bottom: 26px;
+        }
+
+        .contacto-info p {
+            font-size: 1.1rem;
+            color: var(--cafe-oscuro);
+            margin-bottom: 38px;
+            line-height: 1.8;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 26px;
+        }
+
+        .info-icono {
+            width: 44px;
+            height: 44px;
+            background: var(--verde-pastel);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--cafe-oscuro);
+            flex-shrink: 0;
+        }
+
+        .info-item span {
+            font-size: 1.05rem;
+            color: var(--cafe-oscuro);
+        }
+
+        .formulario-contacto {
+            background: var(--beige-crema);
+            padding: 60px 50px;
+            border-radius: 32px;
+            box-shadow: 0 20px 60px var(--sombra-suave);
+            border: 1px solid rgba(122, 90, 74, 0.05);
+        }
+
+        .formulario-contacto h4 {
+            font-size: 1.9rem;
+            margin-bottom: 38px;
+            color: var(--caramelo);
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: var(--fuente-titulos);
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--cafe-oscuro);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 17px 22px;
+            border: 2px solid rgba(122, 90, 74, 0.1);
+            border-radius: 18px;
+            font-family: var(--fuente-cuerpo);
+            font-size: 1rem;
+            background: var(--blanco-calido);
+            color: var(--cafe-oscuro);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--caramelo);
+            box-shadow: 0 0 0 6px rgba(216, 166, 110, 0.15);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .error-msg {
+            color: #d32f2f;
+            font-size: 0.85rem;
+            margin-top: 8px;
+            display: none;
+        }
+
+        .confirmacion {
+            background: var(--verde-pastel);
+            color: var(--cafe-oscuro);
+            padding: 30px;
+            border-radius: 22px;
+            margin-top: 30px;
+            text-align: center;
+            display: none;
+            animation: aparecer 0.5s ease;
+        }
+
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ==========================================
+           FOOTER
+           ========================================== */
+        footer {
+            background: var(--cafe-oscuro);
+            color: var(--blanco-calido);
+            padding: 110px 0 45px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 55px;
+            margin-bottom: 65px;
+        }
+
+        .footer-logo img {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 28px;
+        }
+
+        .footer-eslogan {
+            font-family: var(--fuente-cursiva);
+            font-size: 2.2rem;
+            color: var(--caramelo);
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .footer-desc {
+            font-size: 1.05rem;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .footer-col h4 {
+            font-size: 1.4rem;
+            margin-bottom: 24px;
+            color: var(--caramelo);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 16px;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255, 254, 248, 0.7);
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--caramelo);
+        }
+
+        .redes-sociales {
+            display: flex;
+            gap: 20px;
+            margin-top: 26px;
+        }
+
+        .redes-sociales a {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 254, 248, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blanco-calido);
+            font-size: 1.4rem;
+            transition: all 0.3s ease;
+        }
+
+        .redes-sociales a:hover {
+            background: var(--caramelo);
+            color: var(--blanco-calido);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 254, 248, 0.2);
+            padding-top: 38px;
+            text-align: center;
+            font-size: 0.95rem;
+            opacity: 0.7;
+        }
+
+        /* ==========================================
+           ANIMACIONES AL SCROLL
+           ========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==========================================
+           RESPONSIVE
+           ========================================== */
+        @media (max-width: 1024px) {
+            .sobre-grid,
+            .mision-vision-grid,
+            .aplicacion-grid,
+            .contacto-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .hero-symmetry {
+                display: none;
+            }
+
+            .hero-image-frame {
+                width: 420px;
+                height: 340px;
+            }
+
+            .sobre-contenido {
+                text-align: center;
+            }
+
+            .sobre-contenido p.destacada {
+                border-left: none;
+                padding-left: 0;
+                text-align: center;
+            }
+
+            .contacto-info {
+                text-align: center;
+            }
+
+            .info-item {
+                justify-content: center;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 72px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 72px);
+                background: var(--blanco-calido);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 50px;
+                gap: 34px;
+                transition: left 0.4s ease;
+                box-shadow: 0 12px 40px var(--sombra-suave);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.3rem;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-image-frame {
+                width: 320px;
+                height: 260px;
+            }
+
+            .hero-grid {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-texto {
+                text-align: center;
+                max-width: none;
+            }
+
+            .hero-texto .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-imagen {
+                flex: 1 1 100%;
+                max-width: none;
+                width: 100%;
+            }
+
+            .eslogan-texto {
+                font-size: 2.6rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .telefono {
+                width: 280px;
+                height: 540px;
+            }
+
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .formulario-contacto {
+                padding: 40px 20px;
+            }
+
+            .eslogan-texto {
+                font-size: 2rem;
+            }
+
+            .telefono {
+                width: 260px;
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVEGACIÓN -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="imagenes/logo.png" alt="L'Éclair Postrería">
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#mision-vision">Misión y Visión</a></li>
+                <li><a href="#valores">Valores</a></li>
+                <li><a href="#aplicacion">Aplicación</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- SECCIÓN 1: HERO - PORTADA SIMÉTRICA -->
+    <section class="hero" id="inicio">
+        <div class="hero-symmetry">
+            <div class="sym-left">
+                <div class="sym-element verde"></div>
+                <div class="sym-element sal"></div>
+            </div>
+            <div class="sym-right">
+                <div class="sym-element car"></div>
+                <div class="sym-element verde"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-texto">
+                    <div class="hero-logo">
+                        <img src="imagenes/logo.png" alt="L'Éclair Postrería">
+                    </div>
+                    <h1>Pequeños placeres, grandes momentos.</h1>
+                    <p>Descubre una nueva forma de disfrutar la repostería. Postres deliciosos, alternativas más saludables y experiencias pensadas para todos.</p>
+                    <div class="hero-buttons">
+                        <a href="#nosotros" class="btn btn-primary">Conoce nuestra historia</a>
+                        <a href="#aplicacion" class="btn btn-secondary">Descubre nuestra propuesta</a>
+                    </div>
+                </div>
+                <div class="hero-imagen">
+                    <div class="hero-image-wrap">
+                        <div class="hero-image-frame">
+                            <div class="hero-corners">
+                                <div class="corner tl"></div>
+                                <div class="corner tr"></div>
+                                <div class="corner bl"></div>
+                                <div class="corner br"></div>
+                            </div>
+                            <img src="imagenes/hero.jpg" alt="Éclairs artesanales y postres saludables">
+                        </div>
+                        <div class="hero-galeria">
+                            <img src="imagenes/alfajores.jpg" alt="Alfajores artesanales">
+                            <img src="imagenes/cookies.jpg" alt="Galletas artesanales">
+                            <img src="imagenes/cupcakes.jpg" alt="Cupcakes decorados">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: SOBRE NOSOTROS -->
+    <section class="sobre-nosotros" id="nosotros">
+        <div class="container">
+            <h2 class="reveal">Más que postres, creamos momentos.</h2>
+            <div class="sobre-grid">
+                <div class="sobre-imagen reveal">
+                    <div class="sobre-badge">Artesanal</div>
+                    <img src="imagenes/alfajores.jpg" alt="Éclairs artesanales y postres saludables">
+                </div>
+                <div class="sobre-contenido reveal">
+                    <h3>Transformando el arte de la repostería</h3>
+                    <p>En L'Éclair nos dedicamos a transformar la manera de disfrutar la repostería. Nuestra propuesta combina sabor, creatividad, innovación y bienestar, ofreciendo alternativas de postres para personas que desean disfrutar de algo delicioso sin depender del consumo excesivo de azúcar.</p>
+                    <p class="destacada">Cada creación es una invitación a saborear con conciencia, sin renunciar al placer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: MISIÓN Y 4: VISIÓN -->
+    <section class="mision-vision" id="mision-vision">
+        <div class="container">
+            <h2 class="reveal">Nuestra <span>misión y visión</span></h2>
+
+            <div class="mision-vision-grid">
+                <!-- MISIÓN -->
+                <div class="tarjeta-centrada reveal" style="transition-delay: 0.1s;">
+                    <h3>Nuestra misión</h3>
+                    <p>En Éclair, nuestra misión es ofrecer postres saludables y deliciosos que permitan a todas las personas disfrutar de la repostería sin restricciones relacionadas con el consumo excesivo de azúcar. Buscamos brindar alternativas innovadoras y accesibles para quienes, por razones de salud o por elección personal, desean mantener una alimentación más equilibrada. Asimismo, a través de nuestra aplicación móvil, promovemos el aprendizaje, la creatividad y la participación dentro del mundo culinario, creando una comunidad inclusiva donde todos puedan compartir y descubrir nuevas experiencias gastronómicas.</p>
+                </div>
+                <div class="tarjeta-imagen reveal" style="transition-delay: 0.2s;">
+                    <img src="imagenes/cookies.jpg" alt="Repostería saludable">
+                </div>
+
+                <!-- VISIÓN -->
+                <div class="tarjeta-imagen reveal" style="transition-delay: 0.3s;">
+                    <img src="imagenes/cupcakes.jpg" alt="Crecimiento e innovación en repostería">
+                </div>
+                <div class="tarjeta-centrada reveal" style="transition-delay: 0.4s;">
+                    <h3>Nuestra visión</h3>
+                    <p>Para los próximos años, Éclair aspira a convertirse en una empresa líder en el sector de la repostería saludable e inclusiva, reconocida por la calidad de sus productos, la innovación de sus servicios y su compromiso con el bienestar de los consumidores. Buscamos expandir nuestra presencia a nivel nacional e internacional, consolidándonos como una referencia en la creación de alternativas saludables que permitan a más personas disfrutar de los postres sin comprometer su calidad de vida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 5: VALORES -->
+    <section class="valores" id="valores">
+        <div class="container">
+            <h2 class="reveal">Los valores que <span>nos representan</span></h2>
+            <p class="subtitulo reveal" style="transition-delay: 0.1s;">Creemos que los pequeños detalles hacen grandes diferencias. Estos son los principios que guían cada una de nuestras acciones.</p>
+
+            <div class="valores-grid">
+                <div class="valor-card reveal">
+                    <div class="valor-icono">🤝</div>
+                    <h4>Inclusión</h4>
+                    <p>Ofrecemos opciones para personas con diferentes necesidades alimenticias, buscando que todos puedan disfrutar de la repostería.</p>
+                </div>
+                <div class="valor-card reveal" style="transition-delay: 0.1s;">
+                    <div class="valor-icono">💡</div>
+                    <h4>Innovación</h4>
+                    <p>Desarrollamos constantemente nuevas recetas y herramientas digitales que mejoren la experiencia de nuestros usuarios.</p>
+                </div>
+                <div class="valor-card reveal" style="transition-delay: 0.2s;">
+                    <div class="valor-icono">⭐</div>
+                    <h4>Calidad</h4>
+                    <p>Garantizamos productos elaborados con ingredientes cuidadosamente seleccionados.</p>
+                </div>
+                <div class="valor-card reveal" style="transition-delay: 0.3s;">
+                    <div class="valor-icono">🌱</div>
+                    <h4>Responsabilidad social</h4>
+                    <p>Fomentamos hábitos de alimentación más conscientes y saludables.</p>
+                </div>
+                <div class="valor-card reveal" style="transition-delay: 0.4s;">
+                    <div class="valor-icono">🍃</div>
+                    <h4>Sostenibilidad</h4>
+                    <p>Procuramos implementar prácticas que reduzcan el impacto ambiental y contribuyan al bienestar de las generaciones futuras.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 6: APLICACIÓN MÓVIL -->
+    <section class="aplicacion" id="aplicacion">
+        <div class="container">
+            <h2 class="reveal">La creatividad <span>también se disfruta</span></h2>
+            <div class="aplicacion-grid">
+                <div class="aplicacion-contenido reveal">
+                    <h3>Una comunidad alrededor de la repostería</h3>
+                    <p>En L'Éclair creemos que la repostería va más allá de preparar postres. Por eso, mediante nuestra aplicación móvil, queremos crear una comunidad donde las personas puedan aprender, experimentar, compartir recetas y descubrir nuevas experiencias culinarias.</p>
+                    <a href="#" class="btn btn-primary">Conoce nuestra aplicación</a>
+                </div>
+                <div class="mockup reveal" style="transition-delay: 0.2s;">
+                    <div class="app-glow"></div>
+                    <div class="telefono">
+                        <div class="pantalla-app">
+                            <img src="imagenes/cupcakes.jpg" alt="Mockup de aplicación móvil de repostería">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 7: ESLOGAN -->
+    <section class="eslogan" id="eslogan">
+        <div class="container">
+            <div class="eslogan-contenido reveal">
+                <div class="eslogan-texto">Pequeños placeres, grandes momentos.</div>
+                <div class="eslogan-divider"></div>
+                <div class="eslogan-imagen">
+                    <img src="imagenes/cupcakes.jpg" alt="Éclair artesanal profesional">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 8: CONTACTO -->
+    <section class="contacto" id="contacto">
+        <div class="container">
+            <h2 class="reveal">Endulzemos juntos tus momentos</h2>
+            <p class="subtitulo reveal" style="transition-delay: 0.1s;">Nos encantaría conocer tus ideas, resolver tus dudas y compartir contigo nuestra pasión por la repostería.</p>
+
+            <div class="contacto-grid">
+                <div class="contacto-info reveal">
+                    <h3>Ponte en contacto con nosotros</h3>
+                    <p>Envíanos un mensaje y nuestro equipo estará encantado de atenderte a la brevedad posible.</p>
+
+                    <div class="info-item">
+                        <div class="info-icono">📧</div>
+                        <span>contacto@leclairpostreria.com</span>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icono">📍</div>
+                        <span>Bogotá, Chapinero, Colombia</span>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icono">📞</div>
+                        <span>+57 1 600 0000</span>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icono">🕒</div>
+                        <span>Lunes a Sábado: 9:00 - 19:00</span>
+                    </div>
+                </div>
+
+                <div class="formulario-contacto reveal" style="transition-delay: 0.2s;">
+                    <h4>Envíanos un mensaje</h4>
+                    <form id="formContacto">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+                            <div class="error-msg" id="errorNombre">Por favor ingresa tu nombre completo.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+                            <div class="error-msg" id="errorEmail">Por favor ingresa un correo válido.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="asunto">Asunto</label>
+                            <input type="text" id="asunto" name="asunto" placeholder="¿Sobre qué deseas hablarnos?" required>
+                            <div class="error-msg" id="errorAsunto">Por favor ingresa un asunto.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" placeholder="Escríbenos tu mensaje..." required></textarea>
+                            <div class="error-msg" id="errorMensaje">Por favor escribe un mensaje.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar mensaje</button>
+                    </form>
+                    <div class="confirmacion" id="confirmacion">
+                        <strong>¡Mensaje enviado!</strong><br>
+                        Gracias por contactar con L'Éclair. Te responderemos muy pronto.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 9: FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="imagenes/logo.png" alt="L'Éclair Postrería">
+                    </div>
+                    <div class="footer-eslogan">Pequeños placeres, grandes momentos.</div>
+                    <p class="footer-desc">Postres saludables, deliciosos e inclusivos. Repostería artesanal hecha con conciencia y pasión.</p>
+                    <div class="redes-sociales">
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="WhatsApp">💬</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#mision-vision">Misión y Visión</a></li>
+                        <li><a href="#valores">Valores</a></li>
+                        <li><a href="#aplicacion">Aplicación</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Información</h4>
+                    <ul>
+                        <li><a href="#">Nuestra propuesta</a></li>
+                        <li><a href="#">Postres saludables</a></li>
+                        <li><a href="#">Aplicación móvil</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>📧 contacto@leclairpostreria.com</li>
+                        <li>📍 Bogotá, Chapinero, Colombia</li>
+                        <li>📞 +57 1 600 0000</li>
+                        <li>🕒 Lun-Sáb: 9:00 - 19:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 L'Éclair Postrería. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ==========================================
+        // MENÚ MÓVIL
+        // ==========================================
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        // ==========================================
+        // HEADER SCROLL EFECTO
+        // ==========================================
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // ==========================================
+        // ANIMACIONES AL SCROLL
+        // ==========================================
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -60px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ==========================================
+        // VALIDACIÓN DEL FORMULARIO
+        // ==========================================
+        const form = document.getElementById('formContacto');
+        const confirmacion = document.getElementById('confirmacion');
+
+        const campos = {
+            nombre: { id: 'errorNombre', valido: false },
+            email: { id: 'errorEmail', valido: false },
+            asunto: { id: 'errorAsunto', valido: false },
+            mensaje: { id: 'errorMensaje', valido: false }
+        };
+
+        function validarCampo(campo, valor, tipo) {
+            const errorEl = document.getElementById(campos[campo].id);
+            let esValido = true;
+
+            if (tipo === 'texto') {
+                esValido = valor.trim().length >= 2;
+            } else if (tipo === 'email') {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                esValido = emailRegex.test(valor.trim());
+            }
+
+            if (esValido) {
+                errorEl.style.display = 'none';
+                document.getElementById(campo).style.borderColor = 'rgba(122, 90, 74, 0.1)';
+                campos[campo].valido = true;
+            } else {
+                errorEl.style.display = 'block';
+                document.getElementById(campo).style.borderColor = '#d32f2f';
+                campos[campo].valido = false;
+            }
+
+            return esValido;
+        }
+
+        Object.keys(campos).forEach(campo => {
+            const input = document.getElementById(campo);
+            const tipo = campo === 'email' ? 'email' : 'texto';
+
+            input.addEventListener('blur', () => validarCampo(campo, input.value, tipo));
+            input.addEventListener('input', () => {
+                if (campos[campo].valido) {
+                    validarCampo(campo, input.value, tipo);
+                }
+            });
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            let formValido = true;
+
+            Object.keys(campos).forEach(campo => {
+                const input = document.getElementById(campo);
+                const tipo = campo === 'email' ? 'email' : 'texto';
+                if (!validarCampo(campo, input.value, tipo)) {
+                    formValido = false;
+                }
+            });
+
+            if (formValido) {
+                form.reset();
+                form.style.display = 'none';
+                confirmacion.style.display = 'block';
+
+                setTimeout(() => {
+                    confirmacion.style.display = 'none';
+                    form.style.display = 'block';
+                }, 8000);
+            }
+        });
+    </script>
+</body>
+</html>
